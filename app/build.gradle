@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
     defaultConfig {
         applicationId "ch.famoser.mensa"
         minSdkVersion 21
