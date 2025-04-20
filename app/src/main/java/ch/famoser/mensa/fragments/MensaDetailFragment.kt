@@ -44,7 +44,7 @@ class MensaDetailFragment : Fragment() {
         val mensa = item ?: return rootView
         val activity = activity ?: return rootView
 
-        val menuDetailsAdapter = MenuDetailsAdapter(mensa.menus, activity)
+        val menuDetailsAdapter = MenuDetailsAdapter(mensa.menus)
         rootView.menu_details_list.adapter = menuDetailsAdapter
 
         return rootView
