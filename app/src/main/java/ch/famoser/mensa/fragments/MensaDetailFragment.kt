@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import ch.famoser.mensa.R
-import ch.famoser.mensa.adapters.MenuDetailsAdapter
+import ch.famoser.mensa.compose.MensaDetail
+import ch.famoser.mensa.compose.MensaTheme
 import ch.famoser.mensa.models.Mensa
 import ch.famoser.mensa.repositories.LocationRepository
-import kotlinx.android.synthetic.main.activity_mensa.*
-import kotlinx.android.synthetic.main.fragment_mensa_detail.view.*
-import java.util.*
+import kotlinx.android.synthetic.main.activity_mensa.toolbar_layout
+import java.util.UUID
 
 class MensaDetailFragment : Fragment() {
 
@@ -38,16 +38,16 @@ class MensaDetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_mensa_detail, container, false)
-
-        val mensa = item ?: return rootView
-        val activity = activity ?: return rootView
-
-        val menuDetailsAdapter = MenuDetailsAdapter(mensa.menus)
-        rootView.menu_details_list.adapter = menuDetailsAdapter
-
-        return rootView
+    ): View {
+      return ComposeView(requireContext()).apply {
+        setContent {
+          MensaTheme {
+            if (item != null) {
+              MensaDetail(item!!.menus)
+            }
+          }
+        }
+      }
     }
 
     companion object {
