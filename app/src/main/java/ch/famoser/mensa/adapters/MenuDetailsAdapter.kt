@@ -2,9 +2,9 @@ package ch.famoser.mensa.adapters
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.platform.ComposeView
 import androidx.recyclerview.widget.RecyclerView
+import ch.famoser.mensa.compose.MensaTheme
 import ch.famoser.mensa.compose.RowMenuDetails
 import ch.famoser.mensa.models.Menu
 
@@ -22,7 +22,7 @@ class MenuDetailsAdapter(
   override fun onBindViewHolder(holder: ComposeViewHolder, position: Int) {
     val item = values[position]
     holder.composeView.setContent {
-      MaterialTheme {
+      MensaTheme {
         RowMenuDetails(menu = item)
       }
     }
