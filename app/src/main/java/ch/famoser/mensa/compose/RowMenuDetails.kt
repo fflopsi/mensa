@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.famoser.mensa.R
 import ch.famoser.mensa.models.Menu
+import ch.famoser.mensa.models.dummyMenu
 
 fun onMenuClick(menu: Menu, context: Context) {
   val clip = ClipData.newPlainText("meals content", "${menu.title}: ${menu.description}")
@@ -105,13 +106,4 @@ fun RowMenuDetails(menu: Menu, modifier: Modifier = Modifier) {
 
 @Preview(widthDp = 400)
 @Composable
-fun PreviewRowMenuDetails() {
-  RowMenuDetails(
-    menu = Menu(
-      title = "vitality",
-      description = "Quornwürfel mit Tomatensauce mit Gnocchi",
-      price = arrayOf("14.50", "20.50", "21.30"),
-      allergens = "Sellerie, Nüsse, Schweinefleisch",
-    )
-  )
-}
+fun PreviewRowMenuDetails() = RowMenuDetails(dummyMenu)

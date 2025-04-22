@@ -21,3 +21,10 @@ class Menu(val title: String, val description: String, val price: Array<String>,
         return Menu(title, description, price, allergens);
     }
 }
+
+val dummyMenu = Menu(
+  title = "vitality",
+  description = "Quornwürfel mit Tomatensauce mit Gnocchi",
+  price = arrayOf("14.50", "20.50", "21.30"),
+  allergens = "Sellerie, Nüsse, Schweinefleisch",
+)
