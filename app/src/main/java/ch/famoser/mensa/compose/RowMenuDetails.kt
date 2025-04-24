@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
@@ -26,7 +25,6 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import ch.famoser.mensa.R
 import ch.famoser.mensa.models.Menu
 import ch.famoser.mensa.models.dummyMenu
@@ -54,8 +52,6 @@ fun RowMenuDetails(menu: Menu, modifier: Modifier = Modifier) {
 
   ElevatedCard(
     onClick = { onMenuClick(menu, context) },
-    elevation = CardDefaults.elevatedCardElevation(defaultElevation = 2.dp),
-    colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surface),
     modifier = modifier
       .padding(
         horizontal = dimensionResource(R.dimen.card_spacing),
