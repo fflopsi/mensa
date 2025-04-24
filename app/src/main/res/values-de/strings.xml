@@ -16,4 +16,6 @@
     <string name="show_only_expanded">nur ausgeklappte Einträge</string>
     <string name="show_menus_in_german">Menus auf Englisch</string>
     <string name="no_expanded_canteens">keine ausgeklappten Einträge</string>
+  <string name="open_in_browser">In Browser öffnen</string>
+  <string name="back">Zurück</string>
 </resources>

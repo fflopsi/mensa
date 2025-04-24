@@ -1,8 +1,13 @@
 package ch.famoser.mensa.compose
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -13,17 +18,18 @@ import ch.famoser.mensa.models.dummyMenu
 @Composable
 fun MensaDetail(
   menus: List<Menu>,
+  listState: LazyListState = rememberLazyListState(),
+  endSpacer: Boolean = false,
   modifier: Modifier = Modifier,
 ) {
-  // LazyColumn not possible right now because of integration with xml views
-  Column(
+  LazyColumn(
+    state = listState,
     modifier = modifier
       .padding(vertical = 4.dp)
-      .fillMaxWidth()
+      .fillMaxWidth(),
   ) {
-    menus.forEach {
-      RowMenuDetails(it)
-    }
+    items(menus) { RowMenuDetails(it) }
+    if (endSpacer) item { Spacer(Modifier.height(76.dp)) }
   }
 }
 

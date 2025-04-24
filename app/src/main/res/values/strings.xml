@@ -17,4 +17,6 @@
     <string name="show_only_expanded">only expanded entries</string>
     <string name="show_menus_in_german">menus in German</string>
     <string name="no_expanded_canteens">no expanded canteens</string>
+  <string name="open_in_browser">Open in browser</string>
+  <string name="back">Back</string>
 </resources>
