@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ElevatedCard
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -66,7 +65,6 @@ fun RowMenu(
       modifier = Modifier
         .padding(dimensionResource(R.dimen.text_margin))
         .weight(1f),
-      color = MaterialTheme.colorScheme.onSurface, // This should not be required manually
     )
     Column(
       horizontalAlignment = Alignment.End,
@@ -76,12 +74,10 @@ fun RowMenu(
         text = menu.title,
         textAlign = TextAlign.End,
         fontWeight = FontWeight.Bold,
-        color = MaterialTheme.colorScheme.onSurface, // This should not be required manually
       )
       if (menu.price.isNotEmpty()) Text(
         text = stringResource(R.string.price, menu.price.first()),
         textAlign = TextAlign.End,
-        color = MaterialTheme.colorScheme.onSurface, // This should not be required manually
       )
     }
   }

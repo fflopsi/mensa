@@ -1,5 +1,9 @@
 package ch.famoser.mensa.models
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import ch.famoser.mensa.adapters.MensaAdapter
 import ch.famoser.mensa.services.URISerializer
 import ch.famoser.mensa.services.UUIDSerializer
 import kotlinx.serialization.Serializable
@@ -23,6 +27,8 @@ class Mensa(
 
     val menus: List<Menu>
         get() = _menus
+
+    var state by mutableStateOf(MensaAdapter.ViewState.Initial)
 
     fun replaceMenus(menus: List<Menu>) {
         this._menus.clear()
