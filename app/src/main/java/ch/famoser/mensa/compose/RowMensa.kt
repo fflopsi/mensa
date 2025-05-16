@@ -38,15 +38,6 @@ fun RowMensa(
         horizontal = dimensionResource(R.dimen.card_spacing),
         vertical = dimensionResource(R.dimen.card_spacing_half),
       )
-      .clickable {
-        if (mensa.state == ViewState.Available) {
-          saveIsFavoriteMensa(mensa, true)
-          mensa.state = ViewState.Expanded
-        } else if (mensa.state == ViewState.Expanded) {
-          saveIsFavoriteMensa(mensa, false)
-          mensa.state = ViewState.Available
-        }
-      }
       .focusable()
       .fillMaxWidth(),
   ) {
@@ -62,6 +53,15 @@ fun RowMensa(
               else -> MaterialTheme.colorScheme.primary
             }
           )
+          .clickable {
+            if (mensa.state == ViewState.Available) {
+              saveIsFavoriteMensa(mensa, true)
+              mensa.state = ViewState.Expanded
+            } else if (mensa.state == ViewState.Expanded) {
+              saveIsFavoriteMensa(mensa, false)
+              mensa.state = ViewState.Available
+            }
+          }
           .fillMaxWidth(),
       ) {
         Text(
