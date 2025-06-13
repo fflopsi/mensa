@@ -22,15 +22,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import ch.famoser.mensa.R
 import ch.famoser.mensa.adapters.MensaAdapter.ViewState
 import ch.famoser.mensa.models.Mensa
-import ch.famoser.mensa.models.dummyMenu
+import ch.famoser.mensa.models.Menu.Companion.dummyMenu
 import java.net.URI
 import java.util.UUID
 
 @Composable
 fun RowMensa(
   mensa: Mensa,
-  saveIsFavoriteMensa: (mensa: Mensa, value: Boolean) -> Unit = { _, _ -> },
   modifier: Modifier = Modifier,
+  saveIsFavoriteMensa: (mensa: Mensa, value: Boolean) -> Unit = { _, _ -> },
 ) {
   ElevatedCard(
     modifier = modifier

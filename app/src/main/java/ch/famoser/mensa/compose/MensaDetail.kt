@@ -13,14 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ch.famoser.mensa.models.Menu
-import ch.famoser.mensa.models.dummyMenu
+import ch.famoser.mensa.models.Menu.Companion.dummyMenu
 
 @Composable
 fun MensaDetail(
   menus: List<Menu>,
+  modifier: Modifier = Modifier,
   listState: LazyListState = rememberLazyListState(),
   endSpacer: Boolean = false,
-  modifier: Modifier = Modifier,
 ) {
   LazyColumn(
     state = listState,

@@ -27,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import ch.famoser.mensa.R
 import ch.famoser.mensa.models.Menu
-import ch.famoser.mensa.models.dummyMenu
+import ch.famoser.mensa.models.Menu.Companion.dummyMenu
 
 fun onMenuClick(menu: Menu, context: Context) {
   val clip = ClipData.newPlainText("meals content", "${menu.title}: ${menu.description}")

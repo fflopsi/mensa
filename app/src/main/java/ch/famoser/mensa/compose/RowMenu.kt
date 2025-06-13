@@ -24,14 +24,14 @@ import ch.famoser.mensa.activities.MainActivity
 import ch.famoser.mensa.activities.MensaActivity
 import ch.famoser.mensa.fragments.MensaDetailFragment
 import ch.famoser.mensa.models.Menu
-import ch.famoser.mensa.models.dummyMenu
+import ch.famoser.mensa.models.Menu.Companion.dummyMenu
 
 @Composable
 fun RowMenu(
   menu: Menu,
+  modifier: Modifier = Modifier,
   twoPane: Boolean = false,
   parentActivity: MainActivity? = null,
-  modifier: Modifier = Modifier,
 ) {
   val context = LocalContext.current
 
@@ -44,10 +44,8 @@ fun RowMenu(
               putString(MensaDetailFragment.MENSA_ID, menu.mensa!!.id.toString())
             }
           }
-          parentActivity!!.supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.details_container, fragment)
-            .commit()
+          parentActivity!!.supportFragmentManager.beginTransaction()
+            .replace(R.id.details_container, fragment).commit()
         } else {
           val intent = Intent(context, MensaActivity::class.java).apply {
             putExtra(MensaDetailFragment.MENSA_ID, menu.mensa!!.id.toString())
