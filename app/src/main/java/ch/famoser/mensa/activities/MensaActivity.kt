@@ -3,7 +3,7 @@ package ch.famoser.mensa.activities
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import ch.famoser.mensa.compose.ActivityMensa
+import ch.famoser.mensa.compose.MensaScreen
 import ch.famoser.mensa.compose.MensaTheme
 import ch.famoser.mensa.fragments.MensaDetailFragment
 import ch.famoser.mensa.models.Mensa
@@ -22,7 +22,7 @@ class MensaActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     val mensa = loadMensaFromIntent() ?: return
 
-    setContent { MensaTheme { ActivityMensa(mensa) } }
+    setContent { MensaTheme { MensaScreen(mensa) } }
   }
 
   private fun loadMensaFromIntent(): Mensa? {
