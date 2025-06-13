@@ -43,14 +43,14 @@ import androidx.compose.ui.unit.lerp
 import ch.famoser.mensa.R
 import ch.famoser.mensa.activities.MainActivity
 import ch.famoser.mensa.models.Mensa
-import ch.famoser.mensa.models.dummyMenu
+import ch.famoser.mensa.models.Menu.Companion.dummyMenu
 import java.io.FileNotFoundException
 import java.net.URI
 import java.util.UUID
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ActivityMensa(mensa: Mensa, modifier: Modifier = Modifier) {
+fun MensaScreen(mensa: Mensa, modifier: Modifier = Modifier) {
   val context = LocalContext.current
   val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())
   val barHeight = lerp(
@@ -129,7 +129,7 @@ fun ActivityMensa(mensa: Mensa, modifier: Modifier = Modifier) {
 @Preview(heightDp = 500)
 @Composable
 fun PreviewActivityMensa() = MensaTheme {
-  ActivityMensa(Mensa(
+  MensaScreen(Mensa(
     id = UUID.randomUUID(),
     title = "Mensa Polyterasse",
     mealTime = "immer",
