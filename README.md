@@ -1,4 +1,9 @@
 # Mensa
+
+*IMPORTANT NOTE: This fork has been discontinued and is no longer being developed in favor of [this new project](https://github.com/fflopsi/mensa-zh)*
+
+---
+
 ![API version](https://img.shields.io/badge/API-21-green.svg)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) 
 
